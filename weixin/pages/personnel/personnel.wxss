@@ -1,0 +1,90 @@
+/* pages/personnel/personnel.wxss */
+.box{
+    width: 100%;
+    height: 100%;
+}
+.search{  
+    width: 90%;  
+    margin: 0 auto;
+  }  
+  .search_arr {  
+    border: 1px solid #d0d0d0;  
+    border-radius: 10rpx;  
+    margin-left: 20rpx; 
+    position: relative; 
+  }  
+  .search_arr input{  
+    margin-left: 60rpx;  
+    height: 60rpx;  
+    border-radius: 5px;  
+  }
+  .searchcion {  
+    margin: 10rpx 10rpx 10rpx 10rpx;  
+    position: absolute;  
+    left:0rpx;  
+    z-index: 2;  
+    width: 20px;  
+    height: 20px;  
+    text-align: center;  
+  } 
+  .list{
+    width: 85%;  
+    margin: 0 auto;
+  } 
+  .remen{
+    line-height: 80rpx;
+    display: flex;
+    font-weight: bold;
+    font-size: 34rpx;
+  }
+  .boxl{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 50rpx;
+      border-bottom: 1px solid #f6f6f6;
+  }
+  .brand{
+      width: 310rpx;
+      height: 220rpx;
+      background: #fef3ef;
+      margin-bottom: 30rpx;
+      position: relative;
+  }
+  .brand-img{
+      display: block;
+      width: 130rpx;
+      height: 120rpx;
+      margin: 50rpx 0rpx 0rpx 30rpx;
+  }
+  .brand-design{
+      position: absolute;
+      left: 170rpx;
+      top: 55rpx;
+      font-weight: bold;
+      font-size: 30rpx;
+      color: #9a6b57;
+  }
+  .brand-tips{
+    position: absolute;
+    left: 170rpx;
+    top: 120rpx;
+    font-size: 17rpx;
+  }
+  #marketing{
+      background: #fff6e7;
+      color: #876633;
+  }
+  #development{
+    background: #f0f9ff;
+    color: #5d6e80;
+ }
+ #comic{
+   background: #faf6f7;
+   color: #7c6172;
+ }
+ .table{
+    line-height: 80rpx;
+    width: 85%;  
+    margin: 0 auto;
+ }

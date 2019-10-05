@@ -1,0 +1,33 @@
+{
+  "pages": [
+    "pages/personnel/personnel",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#f10b2e",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/personnel/personnel",
+        "text": "找人才"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "发需求"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的订单"
+      }
+    ]
+  }
+}
