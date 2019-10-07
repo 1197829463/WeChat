@@ -88,3 +88,8 @@
     width: 85%;  
     margin: 0 auto;
  }
+ .addClass{
+  position:fixed;
+  top:0px;
+}
+ 

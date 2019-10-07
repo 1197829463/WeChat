@@ -1,0 +1,14 @@
+.stars image{
+  width: 20rpx;
+  height: 20rpx;
+}
+.score{
+  font-size: 24rpx;
+  line-height: 48rpx;
+  margin-left: 10rpx;
+}
+.score-text{
+  color: #5a5a5a;
+  font-size: 20rpx;
+  margin-left: 0
+}

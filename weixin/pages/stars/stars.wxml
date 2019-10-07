@@ -1,0 +1,10 @@
+<template name="stars">
+  <view class="stars" wx:if="{{ list.rating.stars != 0}}">
+    <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+      <image wx:if="{{ list.rating.stars / 10 >= index + 1 }}" src="/image/score2.png"></image>
+      <image wx:elif="{{ list.rating.stars / 10 >= index && list.rating.stars % 10 != 0 }}" src="/image/score2.png"></image>
+      <image wx:else src="/image/score1.png"></image>
+    </block>
+    <text class="score"> {{ list.rating.average }}</text>
+  </view>
+</template>

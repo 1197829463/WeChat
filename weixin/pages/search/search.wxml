@@ -1,0 +1,20 @@
+<view class="search">
+  <view class="input">
+    <icon type="search" size="12"></icon>
+    <input type="text" placeholder="搜索品牌广告服务" />
+    <view class="btn">搜索</view>
+  </view>
+  <view class="hot">
+    <text class="hot-title">热门搜索</text>
+    <view class="hot-list">
+      <view class="list-cont">品牌设计</view>
+      <view class="list-cont">营销推广</view>
+      <view class="list-cont">IT/软件</view>
+      <view class="list-cont">电商服务</view>
+      <view class="list-cont">游戏服务</view>
+      <view class="list-cont">装修/工程</view>
+      <view class="list-cont">音视频</view>
+      <view class="list-cont">影视动漫</view>
+    </view>
+  </view>
+</view>

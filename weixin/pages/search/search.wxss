@@ -1,0 +1,66 @@
+/* pages/search/search.wxss */
+.search{
+  width: 100%;
+  background: #ffffff;
+}
+.input{
+  padding: 18rpx 28rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  font-size: 28rpx;
+  border-bottom: 1px solid #efefef;
+}
+.input icon{
+  position: absolute;
+  left: 50rpx;
+  top: 40rpx;
+  z-index: 10;
+  color: #cdcdcd;
+}
+.input input{
+  width: 530rpx;
+  height: 66rpx;
+  display: block;
+  float: left;
+  background: #efefef;
+  border-radius: 66rpx;
+  padding: 0 62rpx;
+  box-sizing: border-box;
+}
+.input input::placeholder{
+  color: #cdcdcd;
+}
+.btn{
+  width: 140rpx;
+  height: 66rpx;
+  border-radius: 66rpx;
+  float: right;
+  background: #f7f7f7;
+  text-align: center;
+  line-height: 66rpx;
+}
+.hot{
+  padding: 18rpx 40rpx;
+  box-sizing: border-box;
+}
+.hot-title{
+  line-height: 86rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #999999;
+}
+.hot-list{
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.list-cont{
+  margin-right: 20rpx;
+  border-radius: 8rpx;
+  background: #f4f4f4;
+  text-align: center;
+  padding: 24rpx 18rpx;
+  font-size: 24rpx;
+  margin-bottom: 18rpx;
+}

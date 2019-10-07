@@ -1,37 +1,149 @@
-.content {
-  width: 95%;
-  padding-top: 25rpx;
-  box-sizing: border-box;
-  margin: 0 auto;
+.tab {
+  display: flex;
+  flex-direction: column;
 }
-.tabButtonAll {
-  height: 90rpx;
-  white-space: nowrap;
-  font-size: 0;
+
+.tab-nav {
+  border-bottom: 1rpx solid #ddd;
   width: 100%;
+  height: 80rpx;
+  display: flex;
+  line-height: 79rpx;
+  position: relative;
 }
-.tabBtn {
-  display: inline-block;
-  height: 90rpx;
-  line-height: 90rpx;
-  margin: 0 20rpx;
-  font-size: 32rpx;
-  transition: all 0.3s;
-}
-.tabBtn.active {
-  color: #e16e1d;
-}
-.tabButtonAll .line {
-  display: block;
-  height: 6rpx;
-  background: #e16e1d;
+
+.tab-line {
   position: absolute;
-  bottom: 0;
-  top: 84rpx;
+  left: 0;
+  bottom: -1rpx;
+  height: 4rpx;
+  background: #f7982a;
   transition: all 0.3s;
-  border-radius: 3rpx;
 }
-swiper {
+
+.tab-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/*选项卡页面联动切换*/
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid #777;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33.33%;
+  color: #777;
+}
+
+.on {
+  color: #da7c0c;
+  border-bottom: 1rpx solid #da7c0c;
+}
+
+.swiper-box {
   display: block;
   height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+.beijing{
+  width: 100%;
+  background: #efedee;
+}
+.itembox{
+  width: 95%;
+  height: 440rpx;
+  margin:  30rpx auto;
+  background: #ffffff;
+  position: relative;
+  z-index: 9999;
+}
+.item-list{
+  width: 100%;
+  height: 379rpx;
+  border-bottom: 1px solid #efedee;
+}
+.item-text{
+  font-size: 20rpx;
+}
+.icon-left{
+  position: relative;
+  top: 4rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+.item-img{
+  position: relative;
+  top: 50rpx;
+  left: -230rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.item-qiye{
+  position: relative;
+  top: -160rpx;
+  left: 260rpx;
+  width: 440rpx;
+  font-weight: bold;
+  font-size: 28rpx;
+  text-align: left!important;
+}
+.label{
+  position: relative;
+  top: -130rpx;
+  left: 70rpx;
+}
+.label-icon{
+  display: inline-block;
+  color: #da7c0c;
+  border: 1px solid #da7c0c;
+  font-size: 22rpx;
+  padding: 6rpx 6rpx 6rpx 6rpx;
+  border-radius: 3rpx;
+  margin-left: 6rpx;
+}
+.price{
+  color: #da7c0c;
+  font-weight: bold;
+  font-size: 26rpx;
+  position: relative;
+  top: -110rpx;
+  left: -40rpx;
+}
+.project{
+  background: #fd7134;
+  color: #ffffff;
+  position: relative;
+  top: -150rpx;
+  left: 240rpx;
+  display: inline-block;
+  padding: 6rpx 6rpx 6rpx 6rpx;
+  border-radius: 10rpx;
+  font-size: 30rpx;
+}
+.comment{
+  background: #efedee;
+  color: #959595;
+  font-size: 22rpx;
+  text-align: left!important;
+  position: relative;
+  top: -160rpx;
+  left: 260rpx;
+  width: 440rpx;
+}
+.s{
+  position: relative;
+  top: -120rpx;
+  left: -260rpx;
 }

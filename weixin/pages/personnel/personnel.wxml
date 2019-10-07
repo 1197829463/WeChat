@@ -1,37 +1,39 @@
 <!--pages/personnel/personnel.wxml-->
 <view class="box">
-    <view class="search">  
+    <view class="search collect-top {{scrollTop>200?'addClass':''}}">  
         <view class="df search_arr">  
           <icon class="searchcion" size='18' type='search'></icon>  
           <input placeholder="请输入关键字" value="{{searchValue}}"/>  
         </view>  
     </view> 
-    <view class="list">
-        <text class="remen">热门品类</text>
-    </view> 
-    <view class="boxl">
-        <view class="brand">
-            <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
-            <text class="brand-design">品牌设计</text>
-            <text class="brand-tips">13年品牌营销经验</text>
+    <view  hidden="{{scrollTop>50?true:false}}">
+         <view class="list">
+            <text class="remen">热门品类</text>
+        </view> 
+        <view class="boxl">
+            <view class="brand">
+                <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
+                <text class="brand-design">品牌设计</text>
+                <text class="brand-tips">13年品牌营销经验</text>
+            </view>
+            <view class="brand" id="marketing">
+                <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
+                <text class="brand-design" id="marketing">品牌设计</text>
+                <text class="brand-tips">13年品牌营销经验</text>
+            </view> 
+            <view class="brand" id="development">
+                <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
+                <text class="brand-design" id="development">品牌设计</text>
+                <text class="brand-tips">13年品牌营销经验</text>
+            </view> 
+            <view class="brand" id="comic">
+                <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
+                <text class="brand-design" id="comic">品牌设计</text>
+                <text class="brand-tips">13年品牌营销经验</text>
+            </view> 
         </view>
-        <view class="brand" id="marketing">
-            <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
-            <text class="brand-design" id="marketing">品牌设计</text>
-            <text class="brand-tips">13年品牌营销经验</text>
-        </view> 
-         <view class="brand" id="development">
-            <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
-            <text class="brand-design" id="development">品牌设计</text>
-            <text class="brand-tips">13年品牌营销经验</text>
-        </view> 
-         <view class="brand" id="comic">
-            <image src="../../images/icon-ddfh.png" alt="" class="brand-img"/>
-            <text class="brand-design" id="comic">品牌设计</text>
-            <text class="brand-tips">13年品牌营销经验</text>
-        </view> 
     </view>
-    <view class="tabs">
+    <view class="tabbox">
         <tab id="tab"></tab>
     </view>
 </view>

@@ -1,9 +1,294 @@
-<view class="content">
-	<scroll-view class="tabButtonAll" id="tabButtonAll" scroll-x scroll-with-animation scroll-left="{{line.scrLeft}}">
-		<view class="tabBtn {{index == line.oldActive ? 'active' : ''}}" wx:for="{{list}}" bindtap="lineInfo" id="{{index}}">{{item.name}}</view>
-		<div class="line" style="width:{{line.width}}px;left:{{line.left}}px"></div>
-	</scroll-view>
-	<swiper current="{{line.swipeIndex}}" duration="300" bindchange="swipeChange"> 
-		<swiper-item wx:for="{{list}}">{{item.name}} 下面的内容</swiper-item>
-	</swiper>
+<scroll-view scroll-x="true" style='width: 95%; white-space:nowrap; margin: 0 auto; '>
+    <!-- tab -->
+    <view class="tab">
+        <view class="tab-nav" style='font-size:12px'>
+            <view class="{{currentTab==index ? 'on' : ''}}" wx:for="{{tabnav.tabitem}}" bindtap="setTab" data-tabindex="{{index}}" style="min-width:20%;max-width:20%;text-align:center;height: 80rpx;background: #fff;border-bottom:{{index>4?'1rpx solid #ddd;':''}}">{{item.text}}</view>
+            <view>
+                <view class="tab-line" style="width:{{100/tabnav.tabnum}}%;transform:translateX({{100*showtab}}%);"></view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="beijing">
+    <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:1000rpx" bindchange="bindChange">
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="itembox">
+            <view class="item-list">
+                <image class="item-img" src="/images/icon-ddfh.png"></image>
+                <view class="item-qiye">企业公司品牌logo设计图文字体标志商标LOGO图标平面设计</view>
+                <view class="label">
+                    <text class="label-icon">3天出稿</text>
+                    <text class="label-icon">原创设计</text>
+                    <text class="label-icon">包注册成功</text>
+                </view>
+                <view class="price">￥999/个</view>
+                <view class="project">做类似项目</view>
+                <view class="s">
+                    123
+                </view>
+                <view class="comment">"很喜欢这种设计，很符合我想要的。~~真是太满意了，如果有下次需要还会再来"</view>
+                </view>
+                <view class="quan">
+                    <text class="item-text">查看全部服务和案例 </text>
+                    <image class="icon-left" src="/images/icon-left.png"></image>
+                </view> 
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <search class="searchs"></search>
+        </swiper-item>
+    </swiper>
 </view>
