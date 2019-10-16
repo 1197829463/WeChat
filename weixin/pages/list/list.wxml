@@ -1,0 +1,154 @@
+<view class='container'>
+    <view class='tab'>
+        <view class="{{selected?'red':'default'}}" bindtap='selected'>APP开发</view>
+        <view class="{{selected1?'red':'default'}}" bindtap='selected1'>网站建设</view>
+        <view class="{{selected2?'red':'default'}}" bindtap='selected2'>公众号开发</view>
+        <view class="{{selected3?'red':'default'}}" bindtap='selected3'>小程序开发</view>
+        <view class="{{selected4?'red':'default'}}" bindtap='selected4'>代运营</view>
+    </view>
+    <view class="{{selected?'show':'hidden'}}">
+        <view class="search-list">
+            <view class="itembox" wx:for="{{ searchList }}" wx:for-item="list" wx:key="id" bindtap="toDetails">
+                <view class="item-list">
+                    <image class="item-img" src="{{ list.itemImg }}"></image>
+                    <view class="item-right">
+                        <view class="item-title">{{ list.itemTitle }}</view>
+                        <view class="label" wx:if="{{ list.label == undefined }}"></view>
+                        <view class="label" wx:else>
+                            <text class="label-icon" wx:for="{{ list.label }}" wx:for-item="item" wx:key="id">{{ item.icon }}</text>
+                        </view>
+                        <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
+                        <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
+                    </view>
+                    <view class="item-down">
+                        <view class="stars" wx:if="{{ list.score != 0}}">
+                            <text class="score-text">{{ list.score }}</text>
+                            <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+                                <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
+                                <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+                                <image wx:else src="../../images/score1.png" class="score" />
+                            </block>
+                        </view>
+                        <view class="comment">{{ list.comment }}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{selected1?'show':'hidden'}}">
+        <view class="search-list">
+            <view class="itembox" wx:for="{{ searchList }}" wx:for-item="list" wx:key="id" bindtap="toDetails">
+                <view class="item-list">
+                    <image class="item-img" src="{{ list.itemImg }}"></image>
+                    <view class="item-right">
+                        <view class="item-title">{{ list.itemTitle }}</view>
+                        <view class="label" wx:if="{{ list.label == undefined }}"></view>
+                        <view class="label" wx:else>
+                            <text class="label-icon" wx:for="{{ list.label }}" wx:for-item="item" wx:key="id">{{ item.icon }}</text>
+                        </view>
+                        <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
+                        <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
+                    </view>
+                    <view class="item-down">
+                        <view class="stars" wx:if="{{ list.score != 0}}">
+                            <text class="score-text">{{ list.score }}</text>
+                            <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+                                <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
+                                <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+                                <image wx:else src="../../images/score1.png" class="score" />
+                            </block>
+                        </view>
+                        <view class="comment">{{ list.comment }}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{selected2?'show':'hidden'}}">
+        <view class="search-list">
+            <view class="itembox" wx:for="{{ searchList }}" wx:for-item="list" wx:key="id" bindtap="toDetails">
+                <view class="item-list">
+                    <image class="item-img" src="{{ list.itemImg }}"></image>
+                    <view class="item-right">
+                        <view class="item-title">{{ list.itemTitle }}</view>
+                        <view class="label" wx:if="{{ list.label == undefined }}"></view>
+                        <view class="label" wx:else>
+                            <text class="label-icon" wx:for="{{ list.label }}" wx:for-item="item" wx:key="id">{{ item.icon }}</text>
+                        </view>
+                        <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
+                        <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
+                    </view>
+                    <view class="item-down">
+                        <view class="stars" wx:if="{{ list.score != 0}}">
+                            <text class="score-text">{{ list.score }}</text>
+                            <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+                                <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
+                                <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+                                <image wx:else src="../../images/score1.png" class="score" />
+                            </block>
+                        </view>
+                        <view class="comment">{{ list.comment }}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{selected3?'show':'hidden'}}">
+        <view class="search-list">
+            <view class="itembox" wx:for="{{ searchList }}" wx:for-item="list" wx:key="id" bindtap="toDetails">
+                <view class="item-list">
+                    <image class="item-img" src="{{ list.itemImg }}"></image>
+                    <view class="item-right">
+                        <view class="item-title">{{ list.itemTitle }}</view>
+                        <view class="label" wx:if="{{ list.label == undefined }}"></view>
+                        <view class="label" wx:else>
+                            <text class="label-icon" wx:for="{{ list.label }}" wx:for-item="item" wx:key="id">{{ item.icon }}</text>
+                        </view>
+                        <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
+                        <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
+                    </view>
+                    <view class="item-down">
+                        <view class="stars" wx:if="{{ list.score != 0}}">
+                            <text class="score-text">{{ list.score }}</text>
+                            <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+                                <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
+                                <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+                                <image wx:else src="../../images/score1.png" class="score" />
+                            </block>
+                        </view>
+                        <view class="comment">{{ list.comment }}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="{{selected4?'show':'hidden'}}">
+        <view class="search-list">
+            <view class="itembox" wx:for="{{ searchList }}" wx:for-item="list" wx:key="id" bindtap="toDetails">
+                <view class="item-list">
+                    <image class="item-img" src="{{ list.itemImg }}"></image>
+                    <view class="item-right">
+                        <view class="item-title">{{ list.itemTitle }}</view>
+                        <view class="label" wx:if="{{ list.label == undefined }}"></view>
+                        <view class="label" wx:else>
+                            <text class="label-icon" wx:for="{{ list.label }}" wx:for-item="item" wx:key="id">{{ item.icon }}</text>
+                        </view>
+                        <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
+                        <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
+                    </view>
+                    <view class="item-down">
+                        <view class="stars" wx:if="{{ list.score != 0}}">
+                            <text class="score-text">{{ list.score }}</text>
+                            <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
+                                <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
+                                <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+                                <image wx:else src="../../images/score1.png" class="score" />
+                            </block>
+                        </view>
+                        <view class="comment">{{ list.comment }}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

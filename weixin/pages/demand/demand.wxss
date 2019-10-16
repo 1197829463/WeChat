@@ -1,0 +1,238 @@
+.header {
+  width: 100%;
+  text-align: center;
+}
+
+.header text {
+  display: block;
+}
+
+.header .header-top {
+  font-weight: 700;
+  font-size: 34rpx;
+  margin: 30rpx 0 20rpx 0;
+}
+
+.header .header-bottom {
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+  color: #656565;
+}
+
+.form {
+  padding: 0 20rpx;
+}
+
+.input-item {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70rpx;
+  background-color: #f2f2f2;
+  border-radius: 10rpx;
+  margin-bottom: 25rpx;
+  padding: 0 20rpx;
+  position: relative;
+  font-size: 32rpx;
+  margin: 30rpx 0;
+
+}
+
+.info {
+  margin: 10rpx 0 30rpx 0;
+  position: relative;
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #fff0dd;
+  border-radius: 4rpx;
+  text-align: center;
+  color: #ff6500;
+  font-size: 32rpx;
+}
+
+
+.input-item .want {
+  position: relative;
+  display: inline-block;
+  margin-right: 25rpx;
+  top: -20rpx;
+
+}
+
+.input-item input {
+  display: inline-block;
+  border-left: 1rpx solid #cccccc;
+  padding-left: 25rpx;
+}
+
+.input-item .btn {
+  font-size: 32rpx;
+  color: #ff6200;
+  padding-left: 30rpx;
+}
+
+.btnaniu {
+  background-color: #ff6c0d;
+  color: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin: 20rpx 0 35rpx 0;
+  font-size: 32rpx;
+}
+
+.footer {
+  font-size: 30rpx;
+  color: #656565;
+}
+
+.show-btn {
+
+  margin-top: 100rpx;
+
+  color: #22cc22;
+
+}
+
+.modal-mask {
+
+  width: 100%;
+
+  height: 100%;
+
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  background: #000;
+
+  opacity: 0.5;
+
+  overflow: hidden;
+
+  z-index: 9000;
+
+  color: #fff;
+
+}
+
+.modal-dialog {
+
+  width: 540rpx;
+
+  overflow: hidden;
+
+  position: fixed;
+
+  top: 50%;
+
+  left: 0;
+
+  z-index: 9999;
+
+  background: #f9f9f9;
+
+  margin: -180rpx 105rpx;
+
+  border-radius: 36rpx;
+
+}
+
+.modal-title {
+
+  padding-top: 50rpx;
+
+  font-size: 36rpx;
+
+  color: #030303;
+
+  text-align: center;
+
+}
+
+.modal-content {
+
+  padding: 50rpx 32rpx;
+
+}
+
+.modal-input {
+
+  display: flex;
+
+  background: #fff;
+
+  border: 2rpx solid #ddd;
+
+  border-radius: 4rpx;
+
+  font-size: 28rpx;
+
+}
+
+.input {
+
+  width: 100%;
+
+  height: 82rpx;
+
+  font-size: 28rpx;
+
+  line-height: 28rpx;
+
+  padding: 0 20rpx;
+
+  box-sizing: border-box;
+
+  color: #333;
+
+}
+
+input-holder {
+
+  color: #666;
+
+  font-size: 28rpx;
+
+}
+
+.modal-footer {
+
+  display: flex;
+
+  flex-direction: row;
+
+  height: 86rpx;
+
+  border-top: 1px solid #dedede;
+
+  font-size: 34rpx;
+
+  line-height: 86rpx;
+
+}
+
+.btn-cancel {
+
+  width: 50%;
+
+  color: #666;
+
+  text-align: center;
+
+  border-right: 1px solid #dedede;
+
+}
+
+.btn-confirm {
+
+  width: 50%;
+
+  color: #ec5300;
+
+  text-align: center;
+
+}

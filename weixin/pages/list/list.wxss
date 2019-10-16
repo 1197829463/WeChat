@@ -1,0 +1,157 @@
+.tab {
+    border-bottom: 1px solid #f3f3f3;
+    overflow: hidden;
+}
+.tab>view {
+    width: 20%;
+    text-align: center;
+    float: left;
+    height: 44px;
+    line-height: 44px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.default {
+    color: #000;
+}
+.red {
+    color: #fc6a05;
+    border-bottom: 1px solid #fc6a05;
+}
+.show {
+    display: block;
+    text-align: center;
+    height: 100%;
+}
+.hidden {
+    display: none;
+    text-align: center;
+    height: 100%;
+}
+.search-list {
+    width: 100%;
+    margin-top: 56rpx;
+    padding: 0 28rpx;
+    box-sizing: border-box
+}
+
+.itembox {
+    width: 100%;
+    background: #fff;
+    border-radius: 6rpx;
+    box-shadow: 0 4rpx 6rpx #ececec;
+    margin-bottom: 34rpx
+}
+
+.item-list {
+    padding: 28rpx;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* border-bottom: 1px solid #cdcdcd; */
+    padding-bottom: 26rpx
+}
+
+.item-img {
+    width: 170rpx;
+    height: 170rpx;
+    border-radius: 6rpx;
+    float: left
+}
+
+.item-right {
+    margin-left: 190rpx;
+    overflow: hidden
+}
+
+.item-title {
+    font-size: 28rpx;
+    font-weight: 700;
+    min-height: 76rpx;
+    text-align: left;
+}
+
+.label {
+    margin-top: 8rpx;
+    min-height: 42rpx;
+    text-align: left;
+}
+
+.label-icon {
+    font-size: 20rpx;
+    /* line-height: 10rpx; */
+    color: #fc6a05;
+    border: 1px solid #fc6a05;
+    padding: 0 4rpx;
+    margin-right: 8rpx;
+    display: inline-block;
+    /* height: 28rpx; */
+}
+
+.price {
+    color: #fc6a05;
+    margin-top: 8rpx;
+    font-size: 24rpx;
+    float: left
+}
+
+.project {
+    float: right;
+    font-size: 22rpx;
+    color: #fff;
+    border-radius: 6rpx;
+    padding: 4rpx 10rpx;
+    margin-top: 4rpx;
+    background: -webkit-linear-gradient(left, #fc6a05, #fe934d);
+    background: -o-linear-gradient(right, #fc6a05, #fe934d);
+    background: -moz-linear-gradient(right, #fc6a05, #fe934d);
+    background: linear-gradient(to right, #fc6a05, #fe934d)
+}
+
+.item-down {
+    margin-top: 28rpx
+}
+
+.stars {
+    float: left;
+    overflow: hidden
+}
+
+.score {
+    width: 26rpx;
+    height: 26rpx;
+    float: left;
+    margin-top: 4rpx
+}
+
+.comment {
+    margin-left: 190rpx;
+    font-size: 24rpx;
+    background: #f2f2f2;
+    color: #999;
+    border-radius: 6rpx;
+    padding: 8rpx;
+    line-height: 38rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2
+}
+
+.more {
+    padding: 20rpx 0;
+    font-size: 24rpx;
+    text-align: center
+}
+
+.icon-jiantou-you {
+    font-size: 22rpx;
+    margin-left: 8rpx
+}
+
+.score-text {
+    color: #e09015;
+    font-size: 24rpx;
+    float: left;
+    margin-right: 4rpx
+}

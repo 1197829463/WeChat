@@ -1,0 +1,40 @@
+<view>
+   <view class="header">
+    <text class="header-top">需求确认</text>
+    <text class="header-bottom">只需要两个步骤 , 沟通效率提升50%</text>
+   </view> 
+  <view class="form">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+
+      <view class="input-item">
+        <text class="want">
+          我需要
+        </text>
+          <input type="text" placeholder="可手动输入：如：logo设计" class="inp-holder"  bindinput="getNeed" maxlength="30" />
+      </view>
+      <view class="input-item">
+          <text class="want">
+            手机号
+          </text>
+           <input type="number" placeholder="仅官方可见 ,请放心填写" class="inp-holder" maxlength="11" bindinput="getPhone" />
+          <text class="btn" bindtap='showDialogBtn'>修改电话</text>
+        </view>
+      <button class="btnaniu" bindtap='save'>马上为我服务</button>
+  </form>
+  <text class="footer">提示 : 您可以完善需求,半小时内会有专业顾问联系您并为你解答疑难。</text>
+  </view>
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="modal-dialog" wx:if="{{showModal}}">
+    <view class="modal-title">请确认您的联系手机</view>
+    <view class="modal-content">
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input"></input>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <view class="btn-cancel" bindtap="onCancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="onConfirm" data-status="confirm">确定</view>
+    </view>
+  </view>
+</view>

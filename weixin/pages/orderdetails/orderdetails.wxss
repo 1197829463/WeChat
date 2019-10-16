@@ -1,0 +1,191 @@
+/* pages/orderdetails/orderdetails.wxss */
+@import "../../iconfont.wxss";
+
+.orderdetails {
+  width: 100%;
+  height: 100vh;
+  background: #eee;
+}
+
+.order {
+  width: 100%;
+  color: #7f4e26;
+  background: #ffefd5;
+}
+
+.need {
+  border-bottom: 1px solid #edd4ab;
+  padding: 28rpx 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.icon-jiantou-you {
+  float: right;
+}
+
+.order-mes {
+  padding: 28rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.list-cont {
+  margin-left: 42rpx;
+}
+
+.page-order {
+  padding: 60rpx 28rpx 0 28rpx;
+  font-size: 28rpx;
+}
+
+.page-order button {
+  margin-bottom: 28rpx;
+  border: none;
+  background: #fff;
+  color: #898989;
+}
+
+.order-flow {
+  width: 100%;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  color: #b4b4b4;
+}
+
+.order-img {
+  width: 100%;
+  padding: 50rpx 0 30rpx 0;
+  box-sizing: border-box;
+  border: 1px solid #b4b4b4;
+  position: relative;
+  margin-top: 60rpx;
+  border-radius: 10rpx;
+}
+
+.page-order .trust {
+  background: #ff6a03;
+  color: #fff;
+}
+
+.flow-title {
+  font-size: 28rpx;
+  position: absolute;
+  top: -14rpx;
+  left: 37%;
+  background: #eeeeee;
+  padding: 0 30rpx;
+  line-height: 20rpx;
+}
+
+.flow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flow-list {
+  margin: 0 50rpx;
+}
+
+.flow-list image {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 20rpx;
+}
+
+.flow-list text {
+  display: block;
+  max-width: 112rpx;
+  line-height: 38rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.flow-icon {
+  float: left;
+  line-height: 112rpx;
+}
+
+.order-btn {
+  background: #ff6900;
+  color: #fff;
+  width: 100%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/*模态框*/
+.modals {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modals-cancel {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.bottom-dialog-body {
+  position: absolute;
+  z-index: 10001;
+  bottom: 34%;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 360rpx;
+}
+
+/*动画前初始位置*/
+.bottom-pos {
+  -webkit-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.code {
+  width: 520rpx;
+  height: 520rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 82%;
+  margin: auto;
+  z-index: 99
+}
+
+.code-text {
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -80%;
+  bottom: 0;
+  margin: auto;
+}
+
+.code-tel {
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 84%;
+  bottom: 0;
+  margin: auto;
+}

@@ -1,32 +1,44 @@
 {
   "pages": [
-    "pages/personnel/personnel",
+    "pages/talents/talents",
+    "pages/personal/personal",
+    "pages/list/list",
+    "pages/demand/demand",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/item/item",
+    "pages/orderdetails/orderdetails",
+    "pages/cancelorder/cancelorder"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "主页",
     "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {
-    "color": "#666666",
-    "selectedColor": "#f10b2e",
+    "color": "#a9b7b7",
+    "selectedColor": "#ea9518",
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/personnel/personnel",
-        "text": "找人才"
+        "selectedIconPath": "images/talents-msg.png",
+        "iconPath": "images/talents.png",
+        "pagePath": "pages/talents/talents",
+        "text": "主页"
       },
       {
-        "pagePath": "pages/logs/logs",
-        "text": "发需求"
+        "selectedIconPath": "images/needs-msg.png",
+        "iconPath": "images/needs.png",
+        "pagePath": "pages/list/list",
+        "text": "产品"
       },
       {
-        "pagePath": "pages/index/index",
-        "text": "我的订单"
+        "selectedIconPath": "images/indent-msg.png",
+        "iconPath": "images/indent.png",
+        "pagePath": "pages/personal/personal",
+        "text": "个人中心"
       }
     ]
   }

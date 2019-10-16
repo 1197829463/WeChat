@@ -1,0 +1,114 @@
+/* pages/cancelorder/cancelorder.wxss */
+@import "../../iconfont.wxss";
+.orderdetails{
+  width: 100%;
+  height: 100vh;
+  background: #eeeeee;
+}
+
+.order{
+  width: 100%;
+  color: #ffffff;
+  background: #a3a3a3;
+}
+
+.need{
+  border-bottom: 1px solid #8e8e8e;
+  padding: 28rpx 30rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+
+.icon-jiantou-you{
+  float: right;
+}
+
+.order-mes{
+  padding: 28rpx 30rpx;
+  font-size: 24rpx;
+  line-height: 60rpx;
+}
+
+.list-cont{
+  margin-left: 42rpx;
+}
+
+.page-order{
+  padding: 60rpx 28rpx 0 28rpx;
+  font-size: 28rpx;
+}
+
+.page-order button{
+  margin-bottom: 28rpx;
+  border: none;
+  background: #ffffff;
+  color: #898989;
+}
+
+.order-flow {
+  width: 100%;
+  padding: 0 28rpx;
+  box-sizing: border-box;
+  color: #b4b4b4;
+}
+
+.order-img {
+  width: 100%;
+  padding: 50rpx 0 30rpx 0;
+  box-sizing: border-box;
+  border: 1px solid #b4b4b4;
+  /* overflow: hidden; */
+  position: relative;
+  margin-top: 60rpx;
+  border-radius: 10rpx;
+}
+
+/* .order-img image {
+  width: 100%;
+  height: 264rpx;
+} */
+
+.page-order .trust {
+  background: #ff6a03;
+  color: #fff;
+}
+
+.flow-title {
+  font-size: 28rpx;
+  line-height: 20rpx;
+  position: absolute;
+  top: -14rpx;
+  left: 37%;
+  background: #eeeeee;
+  padding: 0 30rpx;
+  line-height: 20rpx;
+}
+
+.flow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flow-list {
+  /* float: left; */
+  margin: 0 50rpx;
+}
+
+.flow-list image {
+  width: 64rpx;
+  height: 64rpx;
+  margin: 0 20rpx;
+}
+
+.flow-list text {
+  display: block;
+  max-width: 112rpx;
+  line-height: 38rpx;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.flow-icon {
+  float: left;
+  line-height: 112rpx;
+}
