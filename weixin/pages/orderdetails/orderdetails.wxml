@@ -1,42 +1,46 @@
 <view class="orderdetails">
-  <view class="order">
+  <view class="order" wx:for='{{ordeIfon}}' wx:for-item = "item" wx:key="index">
     <view class="need">
-      <text>我需要LOGO</text>
-      <text class="iconfont icon-jiantou-you"></text>
+      <text>{{ item.name }}</text>
     </view>
     <view class="order-mes">
       <view class="mes-list">
         <text class="list-name">订单状态</text>
-        <text class="list-cont">已下单</text>
+        <text class="list-cont">{{item.order_status ==  1 ? '已下单' : '已取消订单'}}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">订单编号</text>
-        <text class="list-cont">16273572</text>
+        <text class="list-cont">{{item.order_no}}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">下单时间</text>
-        <text class="list-cont">2019-10-9 15:21</text>
+        <text class="list-cont">{{ nowDate }}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">订单金额</text>
-        <text class="list-cont">￥990.00</text>
+        <text class="list-cont">￥{{ item.p_price }}</text>
       </view>
     </view>
   </view>
   <view class="page-order">
+    <!-- <button class="trust" bindtap="trust">{{ trust }}</button> -->
     <button class="trust" bindtap="showModal">联系客服</button>
     <button bindtap="cancel">{{ motto }}</button>
+    <!-- <button bindtap="goback">回到首页</button> -->
   </view>
   <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
     <view class="modals-cancel" bindtap="hideModal"></view>
     <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+      <!-- <view class="pos-meg"> -->
         <image src="{{ code }}" class="code" />
         <view class="code-text">扫描图中二维码，联系客服沟通需求</view>
         <view class="code-tel">联系电话：110</view>
+      <!-- </view> -->
     </view>
   </view>
   <view class="order-flow">
     <view class="order-img">
+      <!-- <image src="../../images/order.jpg" /> -->
       <view class="flow-title">交易流程</view>
       <view class="flow">
         <view class="flow-list">
@@ -46,7 +50,7 @@
         <text class="iconfont icon-jiantou-you flow-icon"></text>
         <view class="flow-list">
           <image src="../../images/flow-2.jpg" />
-          <text>沟通需求</text>
+          <text>联系客服沟通需求</text>
         </view>
         <text class="iconfont icon-jiantou-you flow-icon"></text>
         <view class="flow-list">

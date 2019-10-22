@@ -1,25 +1,24 @@
 <view class="orderdetails">
   <view class="order">
     <view class="need">
-      <text>我需要LOGO</text>
-      <text class="iconfont icon-jiantou-you"></text>
+      <text>{{ pname }}</text>
     </view>
     <view class="order-mes">
       <view class="mes-list">
         <text class="list-name">订单状态</text>
-        <text class="list-cont">交易失败</text>
+        <text class="list-cont">{{ order_status == 1 ? "已下单": "已取消订单"}}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">订单编号</text>
-        <text class="list-cont">16273572</text>
+        <text class="list-cont">{{ order_no }}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">下单时间</text>
-        <text class="list-cont">2019-10-9 15:21</text>
+        <text class="list-cont">{{ nowDate }}</text>
       </view>
       <view class="mes-list">
         <text class="list-name">订单金额</text>
-        <text class="list-cont">待确定</text>
+        <text class="list-cont">{{ p_price }}</text>
       </view>
     </view>
   </view>

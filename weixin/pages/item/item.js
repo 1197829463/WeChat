@@ -1,118 +1,17 @@
+var app = getApp();
+var http = require("../../utils/http.js")
 Page({
-  /**
-   * 页面的初始数据
-   */
   data: {
-    serveList: [{
-      id: 1,
-      imgs: [
-        { url: '../../images/s1.gif' },
-        { url: '../../images/s2.gif' },
-        { url: '../../images/s3.png' },
-        { url: '../../images/s4.png' },
-        { url: '../../images/s1.gif' },
-        { url: '../../images/s2.gif' },
-        { url: '../../images/s3.png' }
-      ],
-      shopTitle: "企业公司品牌logo设计图文字体标志商标LOGO图标平面设计",
-      price: "990.00",
-      unit: "个",
-      save: "10.00",
-      security: [
-        {
-          id: 1,
-          cont: "保证完成"
-        },
-        {
-          id: 2,
-          cont: "保证推广效果"
-        }
-      ],
-      shopImg: "../../images/timg1.jpg",
-      shopName: "匠派品牌",
-      style: "企业",
-      grade: "猪三十六戒",
-      score: "99.96%",
-      amount: "2481",
-      income: "551.28万",
-      province: "四川",
-      city: "成都",
-      ratings: [
-        {
-          id: 1,
-          count: 14456,
-          classify: [
-            {
-              id: 1,
-              cont: "好评",
-              num: "5185",
-            }, {
-              id: 2,
-              cont: "不错",
-              num: "5174",
-            }, {
-              id: 3,
-              cont: "专业",
-              num: "742",
-            }, {
-              id: 4,
-              cont: "值得推荐",
-              num: "658",
-            }, {
-              id: 5,
-              cont: "信誉很好",
-              num: "872",
-            }, {
-              id: 6,
-              cont: "风格统一",
-              num: "689",
-            }, {
-              id: 7,
-              cont: "严谨认真",
-              num: "689",
-            }, {
-              id: 8,
-              cont: "品质很高",
-              num: "689",
-            }, {
-              id: 9,
-              cont: "注重细节",
-              num: "689",
-            }, {
-              id: 10,
-              cont: "回复及时",
-              num: "689",
-            }
-          ],
-          commentList: [
-            {
-              id: "01",
-              msgSrc: "../../images/timg1.jpg",
-              msgTitle: "t_2053_Rpojdx",
-              score: "5.0",
-              msgText: "设计师水平很高！作品很nice，老板看到后大爱，超级喜欢，以后如有需要还会再来的！下次有需要还会选择这里的"
-            }, {
-              id: "02",
-              msgSrc: "../../images/timg1.jpg",
-              msgTitle: "t_6767_xYdzsb",
-              score: "3.8",
-              msgText: "设计师水平很高！作品很nice，老板看到后大爱，超级喜欢，以后如有需要还会再来的！下次有需要还会选择这里的"
-            }
-          ]
-        }
-      ],
-      detailsImg: [
-        'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571281277&di=905e8930beb8239939b90fe5252a47bc&imgtype=jpg&er=1&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20160927%2F9866af48e75e432f821f6e54ba7cdccc_th.png',
-        'http://pic38.nipic.com/20140228/2457331_083845176000_2.jpg',
-        '../../images/timg1.jpg'
-      ]
-    }],
-
-    currentSwiper: 0,
-    autoplay: true,
-    hideModal: true, //模态框的状态  true-隐藏  false-显示
-    animationData: {},
-    order: "确认下单"
+    serverdata: [],
+    details: {},
+    pimage: [],
+    album: [],
+    services: [],
+    cid: '', //产品类型id
+    id: '', //产品id
+    opendi: '', //用户的openid
+    order: "确认下单",
+    orderid: ""
   },
 
   // 显示遮罩层
@@ -122,12 +21,12 @@ Page({
       hideModal: false
     })
     var animation = wx.createAnimation({
-      duration: 600,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
-      timingFunction: 'ease',//动画的效果 默认值是linear
+      duration: 600, //动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
+      timingFunction: 'ease', //动画的效果 默认值是linear
     })
     this.animation = animation
     setTimeout(function () {
-      that.fadeIn();//调用显示动画
+      that.fadeIn(); //调用显示动画
     }, 200)
   },
 
@@ -135,24 +34,23 @@ Page({
   hideModal: function () {
     var that = this;
     var animation = wx.createAnimation({
-      duration: 800,//动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
-      timingFunction: 'ease',//动画的效果 默认值是linear
+      duration: 800, //动画的持续时间 默认400ms   数值越大，动画越慢   数值越小，动画越快
+      timingFunction: 'ease', //动画的效果 默认值是linear
     })
     this.animation = animation
-    that.fadeDown();//调用隐藏动画   
+    that.fadeDown(); //调用隐藏动画   
     setTimeout(function () {
       that.setData({
         hideModal: true
       })
-    }, 720)//先执行下滑动画，再隐藏模块
-
+    }, 720) //先执行下滑动画，再隐藏模块
   },
 
   //动画集
   fadeIn: function () {
     this.animation.translateY(0).step()
     this.setData({
-      animationData: this.animation.export()//动画实例的export方法导出动画数据传递给组件的animation属性
+      animationData: this.animation.export() //动画实例的export方法导出动画数据传递给组件的animation属性
     })
   },
   fadeDown: function () {
@@ -173,84 +71,101 @@ Page({
   animationChange(e) {
     this.activeSlide = e.detail.current;
   },
-
-
   //点击预览图片
   imgPvw(e) {
-    // console.log(e.currentTarget.dataset.src);
-
+    console.log(e);
+    console.log(e.currentTarget.dataset.src);
     var src = encodeURI(e.currentTarget.dataset.src);
-    var imgArr = this.data.serveList[0].detailsImg;
-    // console.log(this.data.serveList[0].detailsImg);
-
+    var services = this.data.services;
+    var arr = [];
+    for (var i = 0; i < services.length; i++) {
+      arr.push("http://192.168.31.244:888/" + services[i])
+    }
+    // console.log(services);
     wx.previewImage({
-      current: src,
-      urls: imgArr
+      current: "http://192.168.31.244:888/" + src,
+      urls: arr
     })
   },
+  onLoad: function (options) {
+    console.log(options.id)
+    var id = options.id;
+    var cid = options.cid;
+    var orderid = options.orderid;
+    var openid = wx.getStorageSync('openid').openid
+    var that = this;
+    wx.showLoading({
+      title: '加载中...',
+    });
 
+    //发送请求，获取数据
+    var res = app.globalData.index;
+    var data = {
+      'id': id
+    }
+    http.request(res.url + res.product_details, data, this.getDetails)
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 300)
+
+
+    //数据初始化
+    this.setData({
+      hideModal: true,
+      order: "确认下单",
+      cid: cid,
+      id: id,
+      openid: openid
+    })
+  },
+  //获取数据
+  getDetails(res) {
+    var tempObj = res.data;
+    var pimage = tempObj.details.pimage;
+    var album = tempObj.details.album;
+    var services = tempObj.details.services;
+    this.setData({
+      details: tempObj.details,
+      serverdata: tempObj.punlun,
+      pimage: pimage.split('###'),
+      album: album.split('###'),
+      services: services.split('###')
+    })
+    console.log(res)
+
+  },
   //确认下单 跳转
-  confirm() {
+  confirm: function (e) {
+    // console.log(e)
+    var that = this;
     this.setData({
       order: "正在下单..."
     })
+    //下订单请求
+    wx.showLoading({
+      title: '加载中...',
+    });
+
+    var res = app.globalData.index;
+    var data = {
+      'pid': that.data.id,
+      'type': 1,
+      'openid': that.data.openid
+    }
+    http.request(res.url + res.purchase, data, this.getIndex)
+
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 300)
+  },
+
+  //获取数据
+  getIndex(res) {
+    var orderid = res.data.orderid;
+    //页面跳转到订单详情页   参数订单ID
     wx.navigateTo({
-      url: "../orderdetails/orderdetails"
+      url: "/pages/orderdetails/orderdetails?orderid=" + orderid
     })
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+    console.log(res)
   }
 })

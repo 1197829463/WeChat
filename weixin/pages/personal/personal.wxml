@@ -1,20 +1,36 @@
 <view class="order">
-    <view class="portrait">
-        <view class='avater'>
-          <image class='portraitIcon' src='{{avatarUrl}}'></image>
-        </view>
-        <view class="user">
-            <view class="name">{{nickName}}</view>
-        </view>
+  <view class="portrait">
+    <view class='avater'>
+      <image class='portraitIcon' src='{{avatarUrl}}'></image>
     </view>
-    <view class="more_function">
-        <view class="common_functions">
-            <text class="common_text">我的订单</text>
-        </view>
-        <view class="common_order" wx:for="{{ commodity }}" wx:for-item="item" wx:key="id">
-            <view class="p_name">{{item.itemTitle}}</view>
-            <view class="p_pr">{{item.price}}</view>
-        </view>
-        <view class="common_orders">暂无订单信息</view>
+    <view class="user">
+      <view class="name">{{nickName}}</view>
     </view>
+  </view>
+  <view class="more_function">
+    <view class="common_functions">
+      <text class="common_text">我的订单</text>
+    </view>
+    <view class="common_order" wx:for="{{ commodity }}" wx:for-item="item" wx:key="id" wx:if="{{item.name == null || item.p_price == null ?false:true}}">
+      <view class="p_name">商品名称：{{ item.name }}</view>
+      <view class="p_pr">商品价格：￥{{ item.p_price }}</view>
+      <view class="p_pr">订单编号：{{ item.order_no }}</view>
+      <view class="p_pr">订单状态：{{ item.order_status==1 ? "已下单" : "已取消订单" }}</view>
+      <view wx:if="{{ item.order_status == '1' }}" class="trust" bindtap="showModal">联系客服</view>
+      <view wx:else></view>
+    </view>
+    <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
+      <view class="modals-cancel" bindtap="hideModal"></view>
+      <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
+        <!-- <view class="pos-meg"> -->
+        <image src="../../images/code.jpg" class="code" />
+        <view class="code-text">扫描图中二维码，联系客服沟通需求</view>
+        <view class="code-tel">联系电话：110</view>
+        <!-- </view> -->
+      </view>
+    </view>
+    <view class="common_orders">暂无更多订单信息</view>
+    <!-- <view class="common_orders" wx:if="{{ commodity == [] }}">暂无更多订单信息</view>
+    <view wx:else></view> -->
+  </view>
 </view>

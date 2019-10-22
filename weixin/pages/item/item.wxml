@@ -1,111 +1,82 @@
-<view class="serve" wx:for="{{ serveList }}" wx:for-item="list" wx:key="id">
+<view class="serve" wx:for="{{ 1 }}" wx:for-item="list" wx:key="id">
   <!-- 轮播图 -->
   <view class="banner">
-    <swiper class="bannerswipers" autoplay="{{ autoplay }}" bindanimationfinish="animationChange" bindchange="swiperChange" circular="true">
-      <block wx:for="{{ list.imgs }}" wx:key="{{ index }}">
+    <swiper class="bannerswipers" autoplay="true" bindanimationfinish="animationChange" bindchange="swiperChange" circular="true">
+      <block wx:for="{{ album }}" wx:for-item="item" wx:key="{{ index }}">
         <swiper-item>
-          <image src="{{ item.url }}"></image>
+          <image src="http://192.168.31.244:888/{{ item }}"></image>
         </swiper-item>
       </block>
-    </swiper>
+    </swiper> 
     <!-- 小圆点 -->
-    <view class="bannerdots flex alignC flexC">
-      <block wx:for="{{ list.imgs }}" wx:fot-item="{{ item }}" wx:key="{{ index }}">
+ <view class="bannerdots flex alignC flexC">
+      <block wx:for="{{ album }}" wx:fot-item="{{ item }}" wx:key="{{ index }}">
         <view class="bannerdot{{ index == currentSwiper ? ' banneractive' : '' }}"></view>
       </block>
     </view>
   </view>
   <view class="shop-msg">
-    <text class="shop-title">{{ list.shopTitle }}</text>
+    <text class="shop-title">{{ details.pname }}</text>
     <view class="num">
-      <view class="price" wx:if="{{ list.unit == undefined }}">￥{{ list.price }}</view>
-      <view class="price" wx:else>￥{{ list.price }}/{{ list.unit }}</view>
-      <view class="save">手机省{{ list.save }}</view>
+      <view class="price" wx:if="{{ details.unit == 0 }}">￥{{ details.p_price }}</view>
+      <view class="price" wx:else>￥{{ details.p_price }}/{{ details.unit }}</view>
+      <view wx:if="{{ details.save_money == ''}}"></view>
+      <view class="save" wx:else>手机省{{ details.save_money }}</view>
       <button open-type="share">
         <text class="iconfont icon-fenxiang-1"></text>
       </button>
     </view>
   </view>
-  <view wx:if="{{ list.security == undefined }}"></view>
-  <view class="center" wx:else>
+  <!-- <view wx:if="{{ list.security == undefined }}"></view>
+  <view class="center">
     <text class="center-title">保障</text>
     <view wx:for="{{ list.security }}" wx:for-item="list" wx:key="id">
       <image src="../../images/right.png" class="center-icon" />
       <text class="center-cont">{{ list.cont }}</text>
     </view>
-  </view>
-  <!-- <view class="shop">
-    <image src="{{ list.shopImg }}" class="shop-img" />
-    <view class="shop-right">
-      <view class="shop-on">
-        <text class="shop-name">{{ list.shopName }}</text>
-        <view class="shop-icon blue" wx:if="{{ list.style == '企业' }}">{{ list.style }}</view>
-        <view class="shop-icon person" wx:else>{{ list.style }}</view>
-        <text class="shop-icon">{{ list.grade }}</text>
-        <text class="iconfont icon-jiantou-you"></text>
-      </view>
-      <view class="shop-center">
-        好评率
-        <text class="center-text">{{ list.score }}</text>
-        ·近三月成单
-        <text class="center-text">{{ list.amount }}</text>
-        ·收入
-        <text class="center-text">{{ list.income }}</text>
-      </view>
-      <view class="shop-addr">
-        <text class="iconfont icon-htmal5icon14"></text>
-        {{ list.province }}·{{ list.city }}
-      </view>
-    </view>
   </view> -->
-  <view class="comment" wx:for="{{ list.ratings }}" wx:for-item="item" wx:key="id">
+  <!-- 客户评价 -->
+  <view class="comment" wx:for="{{1}}" wx:for-item="item" wx:key="id">
     <view class="comment-title">
       <view>
         客户评价
-        <text class="comment-num">({{ item.count }}条)</text>
+        <text class="comment-num">({{serverdata.lenght}}条)</text>
       </view>
     </view>
-    <!-- <view class="comment-classify">
-      <view class="classify-cont" wx:for="{{ item.classify }}" wx:for-item="list" wx:key="id">
-        {{ list.cont }} ({{ list.num }})
-      </view>
-    </view> -->
-    <view class="comment-list" wx:for="{{ item.commentList }}" wx:for-item="list" wx:key="id">
+    <view class="comment-list" wx:for="{{ serverdata }}" wx:for-item="list" wx:key="id">
       <view class="comment-msg">
-        <image src="{{ list.msgSrc }}" class="msg-img" />
-        <text class="msg-title">{{ list.msgTitle }}</text>
-        <view class="stars" wx:if="{{ list.score != 0}}">
+        <image src="{{  }}" class="msg-img" />
+        <text class="msg-title">{{ list.avatar }}</text>
+        <view class="stars" wx:if="{{ list.level != 0}}">
           <block wx:for="{{ [1,2,3,4,5] }}" wx:for-item="item" wx:key="{{ index }}">
-            <image wx:if="{{ list.score >= index + 1 }}" src="../../images/score2.png" class="score" />
-            <image wx:elif="{{ list.score > index && list.score * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
+            <image wx:if="{{ list.level >= index + 1 }}" src="../../images/score2.png" class="score" />
+            <image wx:elif="{{ list.level > index && list.level * 10 % 10 >= 5 }}" src="../../images/score3.png" class="score" />
             <image wx:else src="../../images/score1.png" class="score" />
           </block>
         </view>
       </view>
-      <text class="msg-text">{{ list.msgText }}</text>
+      <text class="msg-text">{{ list.content }}</text>
     </view>
   </view>
+  <!-- 服务详情 -->
   <view class="servelist">
     <view class="comment-title">
       <view>服务详情</view>
     </view>
-    <image wx:for="{{ list.detailsImg }}" wx:for-item="item" wx:key="{{ index }}" src="{{ item }}" bindtap="imgPvw" data-src="{{ item }}" mode="widthFix" />
+    <image wx:for="{{ services }}" wx:for-item="item" wx:key="{{ index }}" src="http://192.168.31.244:888/{{ item }}" bindtap="imgPvw" data-src="{{ item }}" mode="widthFix" />
   </view>
+  <!-- 购买服务弹出模态框 -->
   <view class="buy">
-    <!-- <view class="buy-left">
-      <image src="../../images/shop.png" />
-      店铺
-    </view> -->
     <view class="modals modals-bottom-dialog" hidden="{{hideModal}}">
       <view class="modals-cancel" bindtap="hideModal"></view>
       <view class="bottom-dialog-body bottom-pos" animation="{{animationData}}">
         <view class="pos-meg">
-          <image src="../../images/2.jpg" class="port" />
+          <image v-for="{{ [1] }}" src="http://192.168.31.244:888/{{ pimage }}" class="port" />
           <view class="meg-right">
-            <view class="meg-title">{{ list.shopTitle }}</view>
+            <view class="meg-title">{{ details.pname }}</view>
             <view class="meg-price">
               订单金额:
-              <text class="price-num">￥{{ list.price }}</text>
+              <text class="price-num">￥{{ details.p_price }}</text>
             </view>
           </view>
         </view>
@@ -118,20 +89,15 @@
           <text class="iconfont icon-jiantou-you flow-icon"></text>
           <view class="flow-list">
             <image src="../../images/flow-2.jpg" />
-            <text>沟通需求</text>
+            <text>联系客服沟通需求</text>
           </view>
           <text class="iconfont icon-jiantou-you flow-icon"></text>
-          <!-- <view class="flow-list">
-            <image src="../../images/flow-3.jpg" />
-            <text>金额托管开始工作</text>
-          </view>
-          <text class="iconfont icon-jiantou-you flow-icon"></text> -->
           <view class="flow-list">
             <image src="../../images/flow-4.jpg" />
             <text>验收工作确认付款</text>
           </view>
         </view>
-        <view class="order-btn" bindtap="confirm">{{ order }}</view>
+        <view class="order-btn" bindtap="confirm" data-id="{{ details.id }}" data-type="1">{{order}}</view>
       </view>
     </view>
     <view class="buy-btn" bindtap="showModal">购买服务</view>

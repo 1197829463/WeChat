@@ -1,10 +1,8 @@
 {
   "pages": [
     "pages/talents/talents",
-    "pages/personal/personal",
     "pages/list/list",
-    "pages/demand/demand",
-    "pages/index/index",
+    "pages/personal/personal",
     "pages/login/login",
     "pages/item/item",
     "pages/orderdetails/orderdetails",
@@ -12,9 +10,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#fc6a05",
     "navigationBarTitleText": "主页",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

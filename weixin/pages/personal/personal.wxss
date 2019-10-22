@@ -46,13 +46,96 @@
 .common_order{
     padding: 40rpx 0;
     border-bottom: 1px solid #eceaed;
+    font-size: 24rpx;
+    position: relative;
 }
 .common_order>view{
-    padding: 0 0 20rpx 20rpx;
+    padding: 0 20rpx;
+    line-height: 48rpx;
 }
 .common_orders{
-    margin-top: 40rpx;
     text-align: center;
     color: #cccccc;
     padding: 40rpx;
+    font-size: 24rpx;
+}
+.trust{
+  position: absolute;
+  top: 40%;
+  right: 50rpx;
+  color: #fe934d;
+  border: 1rpx solid #fe934d;
+  border-radius: 4rpx;
+  padding: 4rpx 12rpx;
+  line-height: 24rpx;
+}
+/*模态框*/
+.modals {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.modals-cancel {
+  position: absolute;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, .5);
+}
+
+.bottom-dialog-body {
+  position: absolute;
+  z-index: 10001;
+  bottom: 24%;
+  left: 0;
+  right: 0;
+  padding: 30rpx;
+  box-sizing: border-box;
+  height: 360rpx;
+}
+
+/*动画前初始位置*/
+.bottom-pos {
+  -webkit-transform: translateY(300%);
+  transform: translateY(300%);
+}
+
+.code {
+  width: 520rpx;
+  height: 520rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 82%;
+  margin: auto;
+  z-index: 99
+}
+
+.code-text {
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -80%;
+  bottom: 0;
+  margin: auto;
+}
+
+.code-tel {
+  text-align: center;
+  color: #ffffff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 84%;
+  bottom: 0;
+  margin: auto;
 }
